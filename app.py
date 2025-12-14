@@ -156,12 +156,12 @@ elif section == "User Age Analysis":
     numeric_cols = ["popularity", "vote_average", "vote_count", "user_age"]
     corr = df[numeric_cols].corr()
     fig, ax = plt.subplots()
-    ax.imshow(corr)
+    im = ax.imshow(corr)
     ax.set_xticks(range(len(numeric_cols)))
     ax.set_xticklabels(numeric_cols, rotation=45)
     ax.set_yticks(range(len(numeric_cols)))
     ax.set_yticklabels(numeric_cols)
-    plt.colorbar(ax.imshow(corr))
+    plt.colorbar(im)
     ax.set_title("Correlation Heatmap of Numerical Features")
     st.pyplot(fig)
 
@@ -231,12 +231,12 @@ elif section == "Genre Analysis":
         aggfunc="mean"
     )
     fig, ax = plt.subplots(figsize=(12, 6))
-    ax.imshow(pivot_genre_age, aspect="auto")
-    
+    im = ax.imshow(pivot_genre_age, aspect="auto")
     ax.set_xticks(range(len(pivot_genre_age.columns)))
     ax.set_xticklabels(pivot_genre_age.columns, rotation=45)
     ax.set_yticks(range(len(pivot_genre_age.index)))
     ax.set_yticklabels(pivot_genre_age.index)
+    plt.colorbar(im, label="Average Popularity")
     ax.set_title("Average Genre Popularity by Age Group")
     st.pyplot(fig)
 
@@ -366,12 +366,12 @@ elif section == "Country Analysis":
         aggfunc="mean"
     )
     fig, ax = plt.subplots(figsize=(12, 6))
-    ax.imshow(pivot, aspect="auto")
-    plt.colorbar(label="Average Popularity")
+    im = ax.imshow(pivot, aspect="auto")
     ax.set_xticks(range(len(pivot.columns)))
     ax.set_xticklabels(pivot.columns, rotation=45)
     ax.set_yticks(range(len(pivot.index)))
     ax.set_yticklabels(pivot.index)
+    plt.colorbar(im, label="Average Popularity")
     ax.set_title("Average Genre Popularity by Country (Top 10 Countries)")
     st.pyplot(fig)
 
