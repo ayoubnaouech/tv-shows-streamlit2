@@ -232,7 +232,7 @@ elif section == "Genre Analysis":
     )
     fig, ax = plt.subplots(figsize=(12, 6))
     ax.imshow(pivot_genre_age, aspect="auto")
-    plt.colorbar(label="Average Popularity")
+    plt.colorbar(label="Average Popularity v2")
     ax.set_xticks(range(len(pivot_genre_age.columns)))
     ax.set_xticklabels(pivot_genre_age.columns, rotation=45)
     ax.set_yticks(range(len(pivot_genre_age.index)))
