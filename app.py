@@ -367,7 +367,7 @@ elif section == "Country Analysis":
     )
     fig, ax = plt.subplots(figsize=(12, 6))
     ax.imshow(pivot, aspect="auto")
-    plt.colorbar(label="Average Popularity")
+    
     ax.set_xticks(range(len(pivot.columns)))
     ax.set_xticklabels(pivot.columns, rotation=45)
     ax.set_yticks(range(len(pivot.index)))
